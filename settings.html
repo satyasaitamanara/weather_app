@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | Settings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-light">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WeatherSphere</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="forecast.html"><i class="fas fa-calendar-week"></i> Forecast</a></li>
+            <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+            <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="search-toggle">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="unit-toggle">
+                <span class="active" id="celsius">℃</span>
+                <span id="fahrenheit">℉</span>
+            </div>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Settings</h1>
+        
+        <!-- Saved Cities -->
+        <div class="settings-section glass-card">
+            <h2><i class="fas fa-map-marker-alt"></i> Saved Locations</h2>
+            <div class="saved-cities" id="saved-cities">
+                <!-- Cities will be added by JavaScript -->
+                <div class="no-cities">
+                    <i class="fas fa-plus-circle"></i>
+                    <p>No saved locations yet. Search for a city and click "Add to Favorites" to save it here.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Units & Appearance -->
+        <div class="settings-section glass-card">
+            <h2><i class="fas fa-paint-brush"></i> Appearance</h2>
+            <div class="setting-option">
+                <label>Temperature Unit:</label>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" data-unit="celsius">Celsius (°C)</button>
+                    <button class="toggle-btn" data-unit="fahrenheit">Fahrenheit (°F)</button>
+                </div>
+            </div>
+            <div class="setting-option">
+                <label>Theme:</label>
+                <div class="toggle-group">
+                    <button class="toggle-btn active" data-theme="light">Light</button>
+                    <button class="toggle-btn" data-theme="dark">Dark</button>
+                    <button class="toggle-btn" data-theme="neon">Neon</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="settings-section glass-card">
+            <h2><i class="fas fa-bell"></i> Notifications</h2>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" id="daily-summary" checked>
+                    Daily weather summary
+                </label>
+            </div>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" id="storm-alerts" checked>
+                    Severe weather alerts
+                </label>
+            </div>
+            <div class="setting-option">
+                <label>
+                    <input type="checkbox" id="rain-alerts">
+                    Rain alerts
+                </label>
+            </div>
+        </div>
+        
+        <!-- API Settings (Developer) -->
+        <div class="settings-section glass-card developer">
+            <h2><i class="fas fa-code"></i> Developer Options</h2>
+            <div class="setting-option">
+                <label for="api-key">API Key:</label>
+                <input type="password" id="api-key" placeholder="Enter your OpenWeatherMap API key">
+                <button id="save-api-key" class="glow">Save</button>
+            </div>
+            <div class="setting-option">
+                <div>
+                    <button id="clear-cache" class="glow">Clear Cache</button>
+                    <button id="reset-settings" class="glow">Reset All Settings</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation" id="confirmation-modal">
+        <div class="confirmation-content">
+            <h3>Reset Settings</h3>
+            <p>Are you sure you want to reset all settings to default? This action cannot be undone.</p>
+            <div class="confirmation-buttons">
+                <button class="cancel-btn" id="cancel-reset">Cancel</button>
+                <button class="confirm-btn" id="confirm-reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        Settings saved successfully!
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

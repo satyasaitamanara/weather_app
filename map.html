@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | Weather Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WeatherSphere</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="forecast.html"><i class="fas fa-calendar-week"></i> Forecast</a></li>
+            <li class="active"><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="search-toggle">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="unit-toggle">
+                <span class="active" id="celsius">℃</span>
+                <span id="fahrenheit">℉</span>
+            </div>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Weather Map & Radar</h1>
+        
+        <div class="map-container">
+            <!-- Main Map -->
+            <div class="main-map glass-card">
+                <div id="weather-map"></div>
+                <div class="map-controls">
+                    <button id="temp-layer" class="active"><i class="fas fa-temperature-high"></i> Temp</button>
+                    <button id="precip-layer"><i class="fas fa-cloud-rain"></i> Precip</button>
+                    <button id="wind-layer"><i class="fas fa-wind"></i> Wind</button>
+                    <button id="radar-layer"><i class="fas fa-satellite-dish"></i> Radar</button>
+                </div>
+            </div>
+            
+            <!-- Mini Map -->
+            <div class="mini-map glass-card">
+                <h3>Local View</h3>
+                <div id="mini-map"></div>
+                <div class="location-info">
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="current-location">Loading...</span></p>
+                    <p><i class="fas fa-thermometer-half"></i> Temp: <span id="map-temp">--</span><span class="unit">℃</span></p>
+                    <p><i class="fas fa-tint"></i> Humidity: <span id="map-humidity">--%</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Weather Alerts -->
+        <div class="alerts-container glass-card">
+            <h3><i class="fas fa-exclamation-triangle"></i> Weather Alerts</h3>
+            <div class="alerts-list" id="alerts-list">
+                <div class="no-alerts">
+                    <i class="fas fa-check-circle"></i>
+                    <p>No active weather alerts for this location</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

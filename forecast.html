@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | 7-Day Forecast</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forecast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WeatherSphere</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="active"><a href="forecast.html"><i class="fas fa-calendar-week"></i> Forecast</a></li>
+            <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="search-toggle">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="unit-toggle">
+                <span class="active" id="celsius">℃</span>
+                <span id="fahrenheit">℉</span>
+            </div>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">7-Day Forecast</h1>
+        
+        <!-- Chart Toggle -->
+        <div class="chart-toggle">
+            <button class="toggle-btn active" data-chart="temperature">Temperature</button>
+            <button class="toggle-btn" data-chart="precipitation">Precipitation</button>
+            <button class="toggle-btn" data-chart="wind">Wind</button>
+        </div>
+        
+        <!-- Chart Container -->
+        <div class="chart-container glass-card">
+            <canvas id="weather-chart"></canvas>
+        </div>
+        
+        <!-- Daily Forecast Cards -->
+        <div class="daily-forecast" id="daily-forecast">
+            <!-- Cards will be added by JavaScript -->
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/forecast.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherSphere | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WeatherSphere</span>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="forecast.html"><i class="fas fa-calendar-week"></i> Forecast</a></li>
+            <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="search-toggle">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="unit-toggle">
+                <span class="active" id="celsius">℃</span>
+                <span id="fahrenheit">℉</span>
+            </div>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles-js"></div>
+        <div class="hero-content">
+            <h1>Real-Time Weather Data</h1>
+            <p>Get accurate weather forecasts with our futuristic interface</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Current Weather Card -->
+        <div class="current-weather glass-card">
+            <div class="location-time">
+                <h2 id="city-name">Loading...</h2>
+                <p id="current-date">--/--/----</p>
+                <p id="current-time">--:-- --</p>
+            </div>
+            <div class="weather-main">
+                <div class="temp-icon">
+                    <div class="temperature">
+                        <span id="current-temp">--</span>
+                        <span class="unit">℃</span>
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weather-icon" src="assets/icons/01d.png" alt="Weather icon">
+                        <p id="weather-desc">--</p>
+                    </div>
+                </div>
+                <div class="weather-details">
+                    <div class="detail">
+                        <i class="fas fa-tint"></i>
+                        <span>Humidity</span>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <span>Wind</span>
+                        <span id="wind">-- km/h</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index</span>
+                        <span id="uv">--</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-sun"></i>
+                        <span>Sunrise</span>
+                        <span id="sunrise">--:--</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-moon"></i>
+                        <span>Sunset</span>
+                        <span id="sunset">--:--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hourly Forecast -->
+        <div class="hourly-forecast">
+            <h3>Hourly Forecast</h3>
+            <div class="scroll-container">
+                <div class="hourly-cards" id="hourly-forecast">
+                    <!-- Cards will be added by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn glow" id="favorite-btn">
+                <i class="fas fa-heart"></i> Add to Favorites
+            </button>
+            <button class="action-btn glow" id="share-btn">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            <button class="action-btn glow" id="copy-btn">
+                <i class="fas fa-copy"></i> Copy Weather
+            </button>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
