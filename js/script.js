@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for last searched city
     const urlParams = new URLSearchParams(window.location.search);
     const cityParam = urlParams.get('city');
-    const lastCity = cityParam || localStorage.getItem('lastSearchedCity') || 'India';
+    const lastCity = cityParam || localStorage.getItem('lastSearchedCity') || 'Andhra pradesh';
     
     // Store for other pages to use
     localStorage.setItem('currentCity', lastCity);
